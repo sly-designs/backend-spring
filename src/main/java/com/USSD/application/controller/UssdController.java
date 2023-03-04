@@ -38,4 +38,25 @@ public class UssdController {
         } else if (state.equals("3")) {
             // Cancel Bookings action
             // TODO: Implement cancel bookings
+
+            return "CON Enter booking ID to cancel:";
+        } else if (state.startsWith("3*")) {
+            // Cancel Bookings action - Enter booking ID
+            // TODO: Implement cancel bookings logic
+            return "CON Are you sure you want to cancel this booking?\n" +
+                    "1. Yes\n" +
+                    "2. No";
+        } else if (state.startsWith("3*") && state.endsWith("1")) {
+            // Cancel Bookings action - Confirm cancellation
+            // TODO: Implement cancellation confirmation logic
+            return "END Booking cancelled.";
+        } else if (state.startsWith("3*") && state.endsWith("2")) {
+            // Cancel Bookings action - Cancel cancellation
+            return "END Cancellation cancelled.";
+        } else {
+            // Invalid menu state
+            return "END Invalid input. Please try again.";
+        }
+    }
 }
+
