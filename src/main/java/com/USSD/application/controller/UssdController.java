@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @RestController
 public class UssdController {
+
+    @Autowired
+    private ServiceService serviceService;
     @RequestMapping(value = "/ussd", method = RequestMethod.POST, produces = "text/plain")
     public String handleUssdRequest(@RequestParam("sessionId") String sessionId,
                                     @RequestParam("phoneNumber") String phoneNumber,
