@@ -1,4 +1,6 @@
 package com.USSD.application.controller.repository;
 
-public class ServiceRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ServiceRepository extends JpaRepository<Service, Long> {
 }
