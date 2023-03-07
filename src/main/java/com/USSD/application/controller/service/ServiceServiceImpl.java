@@ -1,5 +1,7 @@
 package com.USSD.application.controller.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class ServiceServiceImpl implements ServiceService{
     @Autowired
     private ServiceRepository serviceRepository;
